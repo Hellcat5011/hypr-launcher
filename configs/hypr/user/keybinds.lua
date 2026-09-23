@@ -4,12 +4,12 @@ local terminal = "ghostty"
 local fileManager = "nautilus -w"
 local browser = "helium-browser"
 local menu = "fuzzel"
+local qs_launch = "qs -c quickshell-launcher ipc call "
 
 -- Main keybinds
 
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + escape", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -24,22 +24,28 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exit())
 
 -- hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu -- prompt 'Clipboard history:' | cliphist decode | wl-copy"))
 -- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind(mainMod .. " + CTRL + N", hl.dsp.exec_cmd("pavucontrol"))
 hl.bind("ALT + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
+
+-- hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o $HOME/Pictures/Screenshots"))
+-- hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m active -m output -o $HOME/Pictures/Screenshots"))
 
 
 -- quick-launcher
 
 -- hl.bind("ALT + CTRL + DELETE", hl.dsp.exec_cmd("wlogout -b 4"))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call notif toggle"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call wallpaper toggle"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call launcher toggle"))
-hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call power toggle"))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call clipboard toggle"))
-hl.bind("PRINT", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call screenshot region"))
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call screenshot window"))
-hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("qs -c quickshell-launcher ipc call screenshot output"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(qs_launch .. "notif toggle"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(qs_launch .. "wallpaper toggle"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(qs_launch .. "launcher toggle"))
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(qs_launch .. "power toggle"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(qs_launch .. "clipboard toggle"))
+hl.bind("PRINT", hl.dsp.exec_cmd(qs_launch .. "screenshot region"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(qs_launch .. "screenshot window"))
+hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd(qs_launch .. "screenshot output"))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.exec_cmd(qs_launch .. "keybinds toggle"))
 
 -- dynamic island
 
@@ -52,10 +58,6 @@ hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("qs -c quickshell-launche
 -- hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("qs -c island ipc call island brightnessDown"))
 
 
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
-
--- hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o $HOME/Pictures/Screenshots"))
--- hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m active -m output -o $HOME/Pictures/Screenshots"))
 
 -- Window navigation
 

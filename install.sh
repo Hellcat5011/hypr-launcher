@@ -26,11 +26,15 @@ cp -R ./configs/* $HOME/.config/
 
 cp -R ./cache/* $HOME/.cache/
 
+cp -R ./.wa.jpg $HOME/.wa.jpg
+
 chrome="$HOME/.cache/wal/helium-theme"
 helium-browser --no-first-run --disable-extensions-except="$chrome" --load-extension="$chrome"
 
 sudo cp ./greetd-config.toml /etc/greetd/config.toml
 sudo systemctl enable greetd
+
+systemctl --user enable mpd-mpris
 
 if [ ! -d "$HOME/.local/share/fonts" ]; then
 	mkdir -p $HOME/.local/share/fonts

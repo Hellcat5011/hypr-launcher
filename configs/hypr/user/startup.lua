@@ -1,7 +1,9 @@
 hl.on("hyprland.start", function()
+	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("$HOME/.config/hypr/user/scripts/first_boot.sh")
 	hl.exec_cmd("hyprctl setcursor Moga-Grey 24")
 	hl.exec_cmd("env QT_IMAGEIO_MAXALLOC=0 qs -c quickshell-launcher")
-	hl.exec_cmd("awww-daemon & hypridle")
+	hl.exec_cmd("hypridle")
 	hl.exec_cmd("nm-applet --indicator & blueman-applet & kdeconnectd & kdeconnect-indicator")
 	hl.exec_cmd("mpd-mpris -host 127.0.0.1 -port 6600")
 

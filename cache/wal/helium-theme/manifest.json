@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "version": "1.1",
+    "name": "Helium Noctalia Theme",
+    "theme": {
+        "colors": {
+            "frame": [
+                19,
+                19,
+                24
+            ],
+            "toolbar": [
+                19,
+                19,
+                24
+            ],
+            "ntp_text": [
+                228,
+                225,
+                233
+            ],
+            "ntp_background": [
+                19,
+                19,
+                24
+            ],
+            "tab_text": [
+                228,
+                225,
+                233
+            ],
+            "tab_background_text": [
+                19,
+                19,
+                24
+            ],
+            "bookmark_text": [
+                228,
+                225,
+                233
+            ]
+        }
+    }
+}

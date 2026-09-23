@@ -1,0 +1,10 @@
+# Matugen configuration for the Dynamic Island project.
+# Merge this into your existing ~/.config/matugen/config.toml, or if you
+# only have one matugen config, add the [templates.island] block below.
+
+[config]
+# These are defaults — your existing config likely already has these.
+
+[templates.island]
+input_path = '/home/vic/.config/quickshell/island/matugen/templates/colors.json'
+output_path = '/home/vic/.config/quickshell/island/data/colors.json'

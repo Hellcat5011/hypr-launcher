@@ -1,0 +1,43 @@
+#!/bin/sh
+
+dir = $(pwd)
+
+if ! pacman -Qs yay > /dev/null; then
+
+	. /etc/os-release
+	if [ "$ID" = "cachyos" ]; then
+		sudo pacman -S --noconfirm yay
+	else
+		sudo pacman -S --noconfirm git base-devel
+		git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+		cd /tmp/yay-bin && makepkg -si --noconfirm
+		rm -rf /tmp/yay-bin
+	fi
+fi
+
+cd $dir
+
+[[ ! -d "$HOME/.config" ]] && mkdir "$HOME/.config"
+[[ ! -d "$HOME/.cache" ]] && mkdir "$HOME/.cache"
+
+yay -S --needed --noconfirm $(cat ./progs.txt)
+
+cp -R ./configs/* $HOME/.config/
+
+cp -R ./cache/* $HOME/.cache/
+
+chrome="$HOME/.cache/wal/helium-theme"
+helium-browser --no-first-run --disable-extensions-except="$chrome" --load-extension="$chrome"
+
+sudo cp ./greetd-config.toml /etc/greetd/config.toml
+sudo systemctl enable greetd
+
+if [ ! -d "$HOME/.local/share/fonts" ]; then
+	mkdir -p $HOME/.local/share/fonts
+fi
+
+cp -R ./fonts/* $HOME/.local/share/fonts/
+fc-cache -fv
+
+echo "You can reboot your system now..."
+

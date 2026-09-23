@@ -1,0 +1,26 @@
+background = #121414
+foreground = #e3e2e2
+cursor-color = #b8cacb
+cursor-text = #233334
+selection-background = #3f4849
+selection-foreground = #dae4e5
+palette = 0=#292a2a
+palette = 1=#ffb4ab
+palette = 2=#b8cacb
+palette = 3=#b1cbce
+palette = 4=#bec8c9
+palette = 5=#d4e6e7
+palette = 6=#dae4e5
+palette = 7=#c7c6c6
+palette = 8=#919190
+palette = 9=#93000a
+palette = 10=#394a4b
+palette = 11=#324b4d
+palette = 12=#3f4849
+palette = 13=#516163
+palette = 14=#464747
+palette = 15=#e3e2e2
+
+
+font-family = CaskaydiaCove Nerd Font Mono
+font-size = 16

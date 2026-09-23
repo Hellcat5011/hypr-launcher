@@ -1,0 +1,74 @@
+[config]
+caching = false
+
+[global]
+backend = "quantiles"
+
+mode = "dark"
+
+[templates.gtk3]
+input_path = '/home/vic/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+#post_hook = 'nautilus -q'
+
+[templates.gtk4]
+input_path = '/home/vic/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+post_hook = 'cp ~/.config/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk-dark.css'
+
+[templates.wlogout]
+input_path = '/home/vic/.config/matugen/templates/colors.css'
+output_path = '~/.config/wlogout/colors.css'
+
+[templates.pywalfox]
+input_path = '/home/vic/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'python /home/vic/.cache/wal/helium.py'
+
+[templates.color-scheme]
+input_path = '~/.config/matugen/templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty'
+output_path = '~/.config/ghostty/config.ghostty'
+
+[templates.hyprland-colors]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.qt5ct]
+input_path = '/home/vic/.config/matugen/templates/qtct-colors.conf'
+output_path = '~/.config/qt5ct/colors/matugen.conf'
+
+[templates.qt6ct]
+input_path = '/home/vic/.config/matugen/templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+[templates.cava]
+input_path = '/home/vic/.config/matugen/templates/cava.ini'
+output_path = '~/.config/cava/themes/matugen'
+
+[templates.foot]
+input_path = '/home/vic/.config/matugen/templates/foot.ini'
+output_path = '~/.config/foot/foot.ini'
+
+[templates.fuzzel]
+input_path = '/home/vic/.config/matugen/templates/fuzzel.ini'
+output_path = '~/.config/fuzzel/fuzzel.ini'
+
+[templates.eww]
+input_path = '/home/vic/.config/matugen/templates/_colors.scss'
+output_path = '~/.config/eww/_colors.scss'
+
+[templates.hypr]
+input_path = '/home/vic/.config/matugen/templates/hypr.lua'
+output_path = '~/.config/hypr/user/colors.lua'
+
+[templates.rmpc]
+input_path = '/home/vic/.config/matugen/templates/theme.ron'
+output_path = '~/.config/rmpc/matugen.ron'
+
+[templates.quickshell]
+input_path = '/home/vic/.config/matugen/templates/qs-colors.json'
+output_path = '~/.config/quickshell/quickshell-launcher/data/colors.json'

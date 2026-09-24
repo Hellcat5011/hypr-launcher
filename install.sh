@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dir = $(pwd)
+dir=$(pwd)
 
 if ! pacman -Qs yay > /dev/null; then
 

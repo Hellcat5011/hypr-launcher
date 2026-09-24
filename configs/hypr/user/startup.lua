@@ -7,7 +7,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("nm-applet --indicator & blueman-applet & kdeconnectd & kdeconnect-indicator")
 	hl.exec_cmd("mpd-mpris -host 127.0.0.1 -port 6600")
 
-	hl.exec_cmd("awww img /home/vic/.wa.jpg")
+	hl.exec_cmd("awww img __USER_HOME__/.wa.jpg")
 	-- hl.exec_cmd("eww open-many mpris clock calendar systray")
 	hl.exec_cmd("wlsunset -S 07:00 -s 17:00 -d 600")
 

@@ -24,6 +24,11 @@ yay -S --needed --noconfirm $(cat ./progs.txt)
 
 cp -R ./configs/* $HOME/.config/
 
+# Safely replace __USER_HOME__ only in files that contain it to avoid modifying unrelated files
+grep -rl "__USER_HOME__" "$HOME/.config" 2>/dev/null | while IFS= read -r file; do
+    sed -i "s|__USER_HOME__|$HOME|g" "$file"
+done
+
 cp -R ./cache/* $HOME/.cache/
 
 cp -R ./.wa.jpg $HOME/.wa.jpg

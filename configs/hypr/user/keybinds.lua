@@ -97,16 +97,16 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("/home/vic/.config/hypr/user/scripts/volume.sh +5"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("/home/vic/.config/hypr/user/scripts/volume.sh -5"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("/home/vic/.config/hypr/user/scripts/volume.sh mute"),     { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("__USER_HOME__/.config/hypr/user/scripts/volume.sh +5"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("__USER_HOME__/.config/hypr/user/scripts/volume.sh -5"),      { locked = true, repeating = true })
+hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("__USER_HOME__/.config/hypr/user/scripts/volume.sh mute"),     { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
 -- brightness scripts
-hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("/home/vic/.config/hypr/user/scripts/brightness.sh + 5")) 
-hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("/home/vic/.config/hypr/user/scripts/brightness.sh - 5")) 
+hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("__USER_HOME__/.config/hypr/user/scripts/brightness.sh + 5")) 
+hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("__USER_HOME__/.config/hypr/user/scripts/brightness.sh - 5")) 
 
 
 
